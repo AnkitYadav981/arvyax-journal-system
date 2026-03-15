@@ -133,7 +133,7 @@ Backend (.env)
 
 PORT=3000
 MONGO_URI=your_mongodb_connection
-AI_SERVICE_URL=http://localhost:8000/analyze
+AI_SERVICE_URL=http://localhost:8000
 NODE_ENV=production
 
 

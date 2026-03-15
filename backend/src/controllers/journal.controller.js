@@ -54,7 +54,7 @@ export const analyzeJournal = async (req, res) => {
                 journal
             });
         }
-        const response = await axios.post(process.env.AI_SERVICE_URL, {
+        const response = await axios.post(process.env.AI_SERVICE_URL+"/analyze", {
             text: journal.text
         });
         const { emotion, keywords, summary } = response.data;
