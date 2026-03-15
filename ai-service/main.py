@@ -4,6 +4,7 @@ import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 import json
+import uvicorn
 
 load_dotenv()
 
@@ -22,6 +23,7 @@ class JournalInput(BaseModel):
 @app.get("/")
 def home():
     return {"message": "AI Service Running"}
+
 
 @app.post("/analyze")
 async def analyze_journal(data: JournalInput):
@@ -52,3 +54,8 @@ async def analyze_journal(data: JournalInput):
             "keywords": [],
             "summary": response.text
         }
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
