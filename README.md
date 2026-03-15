@@ -152,7 +152,7 @@ npm run build
 
 Install Python Dependencies
 
-cd ai-service
+cd ai-service/
 
 python -m venv venv
 

@@ -115,7 +115,7 @@ function HomePage() {
         </div>
         )}
 
-      {journals.map((j) => (
+      {Array.isArray(journals) && journals.map((j) => (
         <div style={{ border: "1px solid #ccc", padding: "1rem", marginTop: "1rem", borderRadius: "8px" }} key={j._id}>
           <p><strong>Text:</strong>{j.text}</p>
           {j.emotion && <p><strong>Emotion:</strong> {j.emotion}</p>}

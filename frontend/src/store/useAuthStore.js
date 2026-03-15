@@ -38,11 +38,11 @@ export const useAuthStore = create((set) => ({
         isGettingJournals: true
       });
 
-
+      console.log("fetchJournals");
       const res = await axiosInstance.get("/123");
 
       set({
-        journals: res.data,
+        journals: res.data.journals || res.data,
         isGettingJournals: false
       });
 
